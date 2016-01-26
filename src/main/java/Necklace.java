@@ -28,7 +28,7 @@ public class Necklace {
 			}
 			for (Stone stone : stonesHeap) {
 				if (stone.name.equalsIgnoreCase(name)) {
-					stones.add(stone);
+					stones.add(StoneFactory.getStone(stone));
 					fullCost += stone.cost;
 					break;
 				}
@@ -48,7 +48,6 @@ public class Necklace {
 
 	@Override
 	public String toString() {
-		return "This beautiful necklace consists of " + stones +
-				", fullCost is " + fullCost;
+		return "This beautiful necklace consists of " + stones + ", fullCost is " + fullCost;
 	}
 }
