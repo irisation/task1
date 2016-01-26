@@ -12,7 +12,7 @@ public class Main {
 	public static void main(String[] args) {
 		ArrayList<Stone> stones = new ArrayList<Stone>();
 		stones.add(new Stone("Diamond", 5, 0.5f, 1000));
-		stones.add(new Stone("Diamond", 5, 0.5f, 1000));
+		stones.add(new Stone("Turquoise", 5, 0.5f, 1000));
 		stones.add(new Stone("Amber", 5, 0.5f, 1000));
 		stones.add(new Stone("Sapphire", 5, 0.5f, 1000));
 
