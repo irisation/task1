@@ -48,9 +48,7 @@ public class Necklace {
 
 	@Override
 	public String toString() {
-		return "Necklace{" +
-				"stones=" + stones +
-				", fullCost=" + fullCost +
-				'}';
+		return "This beautiful necklace consists of " + stones +
+				", fullCost is " + fullCost;
 	}
 }

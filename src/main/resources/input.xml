@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Stones>
+    <Stone>
+        <name>Diamond</name>
+        <weight>5</weight>
+        <transparency>0.5f</transparency>
+        <cost>1500</cost>
+    </Stone>
+    <Stone>
+        <name>Turquoise</name>
+        <weight>5</weight>
+        <transparency>0.7f</transparency>
+        <cost>1000</cost>
+    </Stone>
+    <Stone>
+        <name>Amber</name>
+        <weight>5</weight>
+        <transparency>0.6f</transparency>
+        <cost>2000</cost>
+    </Stone>
+    <Stone>
+        <name>Turquoise</name>
+        <weight>5</weight>
+        <transparency>0.5f</transparency>
+        <cost>1070</cost>
+    </Stone>
+    <Stone>
+        <name>Sapphire</name>
+        <weight>5</weight>
+        <transparency>0.5f</transparency>
+        <cost>1070</cost>
+    </Stone>
+</Stones>

@@ -1,24 +1,38 @@
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlElement;
+
 /**
  * Created by Iryna_Busel on 1/22/2016.
  */
-public class Stone implements Comparable{
+
+@XmlAccessorType(XmlAccessType.FIELD)
+public class Stone implements Comparable {
+
+	@XmlElement(name = "name")
 	String name;
+	@XmlElement(name = "weight")
 	double weight;
+	@XmlElement(name = "transparency")
 	float transparency;
-    float cost;
+	@XmlElement(name = "cost")
+	float cost;
+
+	public Stone() {
+	}
 
 	public Stone(String name, double weight, float transparency, float cost) {
 		setName(name);
 		setWeight(weight);
 		setTransparency(transparency);
-        setCost(cost);
+		setCost(cost);
 	}
 
-    public void setCost(float cost) {
-        this.cost = cost;
-    }
+	public void setCost(float cost) {
+		this.cost = cost;
+	}
 
-    void setTransparency(float transparency) {
+	void setTransparency(float transparency) {
 		this.transparency = transparency;
 	}
 
@@ -26,51 +40,53 @@ public class Stone implements Comparable{
 		this.weight = weight;
 	}
 
-	void setName(String name){
-        this.name = name;
-    }
+	void setName(String name) {
+		this.name = name;
+	}
 
-    @Override
-    public String toString() {
-        return "The stone: " + name + ", transparency: " + transparency + ", weight: " + weight + ", cost: " + cost;
-    }
+	@Override
+	public String toString() {
+		return "The stone: " + name + ", transparency: " + transparency + ", weight: " + weight + ", cost: " + cost;
+	}
 
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Stone)) return false;
+	@Override
+	public boolean equals(Object o) {
+		if (this == o)
+			return true;
+		if (!(o instanceof Stone))
+			return false;
 
-        Stone stone = (Stone) o;
+		Stone stone = (Stone) o;
 
-        if (Double.compare(stone.weight, weight) != 0) return false;
-        if (Float.compare(stone.transparency, transparency) != 0) return false;
-        if (Float.compare(stone.cost, cost) != 0) return false;
-        return name.equals(stone.name);
+		if (Double.compare(stone.weight, weight) != 0)
+			return false;
+		if (Float.compare(stone.transparency, transparency) != 0)
+			return false;
+		if (Float.compare(stone.cost, cost) != 0)
+			return false;
+		return name.equals(stone.name);
 
-    }
+	}
 
-    @Override
-    public int hashCode() {
-        int result;
-        long temp;
-        result = name.hashCode();
-        temp = Double.doubleToLongBits(weight);
-        result = 31 * result + (int) (temp ^ (temp >>> 32));
-        result = 31 * result + (transparency != +0.0f ? Float.floatToIntBits(transparency) : 0);
-        result = 31 * result + (cost != +0.0f ? Float.floatToIntBits(cost) : 0);
-        return result;
-    }
+	@Override
+	public int hashCode() {
+		int result;
+		long temp;
+		result = name.hashCode();
+		temp = Double.doubleToLongBits(weight);
+		result = 31 * result + (int) (temp ^ (temp >>> 32));
+		result = 31 * result + (transparency != +0.0f ? Float.floatToIntBits(transparency) : 0);
+		result = 31 * result + (cost != +0.0f ? Float.floatToIntBits(cost) : 0);
+		return result;
+	}
 
-    public int compareTo(Object obj) {
-        Stone tmp = (Stone)obj;
-        if(this.cost < tmp.cost)
-        {
-            return -1;
-        }
-        else if(this.cost > tmp.cost)
-        {
-            return 1;
-        }
-        return 0;
-    }
+	public int compareTo(Object obj) {
+		Stone tmp = (Stone) obj;
+		if (this.cost < tmp.cost) {
+			return -1;
+		} else if (this.cost > tmp.cost) {
+			return 1;
+		}
+		return 0;
+	}
 }
