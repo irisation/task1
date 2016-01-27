@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.util.Comparator;
 import java.util.List;
 
 /**
@@ -46,6 +47,19 @@ public class Necklace {
 		this.fullCost = builder.fullCost;
 	}
 
+	public void sort() {
+		stones.sort(Comparator.<Stone> reverseOrder());
+	}
+
+	public List<Stone> getStonesByTransparency(float min, float max){
+		List<Stone> stonesSelected = new ArrayList<>();
+		for (Stone stone : stones) {
+			if(stone.transparency >= min && stone.transparency <= max){
+				stonesSelected.add(stone);
+			}
+		}
+		return stonesSelected;
+	}
 	@Override
 	public String toString() {
 		return "This beautiful necklace consists of " + stones + ", fullCost is " + fullCost;

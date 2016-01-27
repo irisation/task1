@@ -33,6 +33,9 @@ public class Main {
 			Necklace necklace = new Necklace.Builder(stoneHeap).stoneName("Diamond").stoneName("Sapphire").stoneName("Turquoise")
 					.stoneName("Amber").build();
 			LOG.info(necklace);
+			necklace.sort();
+			LOG.info(necklace);
+			LOG.info(necklace.getStonesByTransparency(0.5f, 0.6f));
 		} catch (JAXBException e) {
 			LOG.error(e.getMessage());
 		}
